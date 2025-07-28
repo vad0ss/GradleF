@@ -15,7 +15,7 @@ import java.util.List;
 public class FurniturePostgresRepository implements FurnitureRepository {
 
     private final Connection connection;
-    private static final Logger logger = LogManager.getLogger(FurnitureApplication.class);
+    private static final Logger logger = LogManager.getLogger(FurniturePostgresRepository.class);
 
     @Inject
     public FurniturePostgresRepository(@Named("PostgresConnection") Connection connection)

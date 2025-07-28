@@ -14,5 +14,4 @@ public interface FurnitureRepository {
     List<Furniture> findAll() throws SQLException;
     List<Furniture> getByType (Type type) throws SQLException;
 
-
 }
