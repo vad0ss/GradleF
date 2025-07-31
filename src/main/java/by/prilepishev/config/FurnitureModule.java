@@ -1,11 +1,7 @@
 package by.prilepishev.config;
 
-import by.prilepishev.FurnitureApplication;
 import by.prilepishev.repository.*;
-import by.prilepishev.service.FurnitureAggregateService;
-import by.prilepishev.service.FurnitureMongoService;
-import by.prilepishev.service.FurniturePostgresService;
-import by.prilepishev.service.WorkerPostgresService;
+import by.prilepishev.service.*;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.name.Names;
@@ -52,6 +48,7 @@ public class FurnitureModule extends AbstractModule {
         bind(FurnitureMongoService.class);
         bind(FurnitureAggregateService.class);
         bind(WorkerPostgresService.class);
+        bind(FurnitureStreamService.class);
     }
 
     @Provides

@@ -1,6 +1,5 @@
 package by.prilepishev.repository;
 
-import by.prilepishev.FurnitureApplication;
 import by.prilepishev.model.Worker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,7 +40,6 @@ public class WorkerPostgresRepository implements WorkerRepository {
                 ps.setInt(2, w.getAge());
                 ps.addBatch();
             }
-
             ps.executeBatch();
         }
     }
@@ -50,7 +48,7 @@ public class WorkerPostgresRepository implements WorkerRepository {
     @Override
     public List<Worker> findAll() throws SQLException {
         List<Worker> workerList = new ArrayList<>();
-        String sql = "SELECT name, age FROM worker";
+        String sql = "SELECT * FROM worker";
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql)) {
 
